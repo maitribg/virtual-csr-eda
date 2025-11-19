@@ -1,0 +1,28 @@
+# API Keys & Environment
+.env
+config.py
+
+# Data files (too large for GitHub)
+data/
+*.csv
+*.json
+
+# Checkpoints
+checkpoint_*.csv
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
