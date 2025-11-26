@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSR Simulator - Customer Interaction Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .chat-bubble-customer {
+            background: #f3f4f6;
+            border-radius: 18px 18px 18px 4px;
+        }
+        .chat-bubble-csr {
+            background: #667eea;
+            color: white;
+            border-radius: 18px 18px 4px 18px;
+        }
+        .customer-card {
+            transition: all 0.3s ease;
+        }
+        .customer-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        .score-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        .score-low {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .score-medium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .score-high {
+            background: #d1fae5;
+            color: #065f46;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <div class="gradient-bg text-white py-8 shadow-lg">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-2">CSR Simulator</h1>
+            <p class="text-xl opacity-90">Customer Service Representative Training & Analysis Platform</p>
+        </div>
+    </div>
+
+    <!-- Customer Navigation -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="customer-card section-card p-6 cursor-pointer border-4 border-transparent hover:border-purple-500" onclick="loadCustomer('angry')">
+                <div class="flex items-center mb-3">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">Alex Johnson</h3>
+                        <p class="text-red-600 font-semibold">Angry Customer</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-sm">Card acceptance issues • High frustration (4/5)</p>
+            </div>
+
+            <div class="customer-card section-card p-6 cursor-pointer border-4 border-transparent hover:border-purple-500" onclick="loadCustomer('unsatisfied')">
+                <div class="flex items-center mb-3">
+                    <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                        <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">Alex Jordan</h3>
+                        <p class="text-yellow-600 font-semibold">Unsatisfied Customer</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-sm">Billing dispute • Lost patience (4/5)</p>
+            </div>
+
+            <div class="customer-card section-card p-6 cursor-pointer border-4 border-transparent hover:border-purple-500" onclick="loadCustomer('confused')">
+                <div class="flex items-center mb-3">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">Jordan Smith</h3>
+                        <p class="text-blue-600 font-semibold">Confused Customer</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-sm">Scheduling mishap • Frustrated (4/5)</p>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div id="customerDetails" class="hidden">
+            <!-- Customer Profile -->
+            <div class="section-card p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Customer Profile</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-semibold text-gray-700 mb-2">Personal Information</h3>
+                        <div class="space-y-2">
+                            <p><span class="font-semibold text-gray-600">Name:</span> <span id="customerName"></span></p>
+                            <p><span class="font-semibold text-gray-600">Age:</span> <span id="customerAge"></span></p>
+                            <p><span class="font-semibold text-gray-600">Background:</span> <span id="customerBackground"></span></p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-700 mb-2">Emotional State & Issue</h3>
+                        <div class="space-y-2">
+                            <p><span class="font-semibold text-gray-600">Emotional State:</span> <span id="customerEmotion"></span></p>
+                            <p><span class="font-semibold text-gray-600">Problem:</span> <span id="customerProblem"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Criteria / Ground Truth -->
+            <div class="section-card p-8 mb-8 bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-purple-200">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">🎯 Success Criteria (Ground Truth)</h2>
+                <p class="text-gray-600 mb-4 italic">These are the expected outcomes that a CSR should achieve in this scenario:</p>
+                <div id="successCriteria" class="space-y-2"></div>
+            </div>
+
+            <!-- Performance Score (Only shown when analysis exists) -->
+            <div id="performanceSection" class="section-card p-8 mb-8 hidden">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Performance Analysis</h2>
+                <div class="text-center mb-6">
+                    <div class="mb-2 text-gray-600 font-semibold">Overall Performance Score</div>
+                    <div id="performanceScore" class="score-badge"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-bold text-green-700 mb-3 text-lg">✓ What CSR Did Well</h3>
+                        <div id="whatWentWell" class="text-gray-700 space-y-2"></div>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-red-700 mb-3 text-lg">✗ Critical Mistakes</h3>
+                        <div id="criticalMistakes" class="text-gray-700 space-y-2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Transcript -->
+            <div class="section-card p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Conversation Transcript</h2>
+                <div id="chatTranscript" class="space-y-4 max-h-[600px] overflow-y-auto pr-4"></div>
+            </div>
+
+            <!-- Detailed Analysis (Only shown when analysis exists) -->
+            <div id="detailedAnalysisSection" class="section-card p-8 mb-8 hidden">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Key Learnings & Recommendations</h2>
+                <div class="mb-6">
+                    <h3 class="font-bold text-purple-700 mb-3 text-lg">📚 Key Learning Moments</h3>
+                    <div id="keyLearnings" class="text-gray-700 space-y-2"></div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-blue-700 mb-3 text-lg">💡 Actionable Recommendations</h3>
+                    <div id="recommendations" class="text-gray-700 space-y-2"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Initial Message -->
+        <div id="initialMessage" class="text-center py-16">
+            <svg class="w-24 h-24 mx-auto text-purple-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+            <h3 class="text-2xl font-semibold text-gray-600 mb-2">Select a Customer to View Details</h3>
+            <p class="text-gray-500">Click on any customer card above to view their profile, conversation, and analysis</p>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+

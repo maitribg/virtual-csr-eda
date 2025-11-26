@@ -1,0 +1,236 @@
+const customerData = {
+    angry: {
+        name: "Alex Johnson",
+        age: 42,
+        background: "Alex is a project manager in a mid-sized tech company, balancing a hectic work schedule with family responsibilities for two children. They are tech-savvy, rely heavily on digital services for both personal and professional needs, and have a high expectation for customer service.",
+        emotionalState: "Frustrated and disappointed, feeling misled and inconvenienced by the switch. (Frustration: 4/5)",
+        problem: "Alex switched their organization card to another organization's service upon assurance that the new organization would accept it. However, after the switch, they encountered problems related to the acceptance of this card, leading to unmet expectations and miscommunication.",
+        hasAnalysis: true,
+        performanceScore: "3/10",
+        scoreClass: "score-low",
+        successCriteria: [
+            "Customer tone improves",
+            "Customer agrees to the proposed solution",
+            "Customer does not have to repeat information",
+            "Issue is escalated appropriately without customer prompting",
+            "Customer receives a follow-up as promised"
+        ],
+        whatWentWell: [
+            "Acknowledged the Customer's Issue: The CSR did acknowledge the customer's issue initially, asking for the Card ID to look into the problem.",
+            "Offered a Solution Eventually: After much back and forth, the CSR did offer to waive the fee for a new card, which is a positive step towards resolution.",
+            "Asked for Email to Send Confirmation: The CSR asked for the customer's email to send details about the resolution, which is a good practice for ensuring clarity and record-keeping."
+        ],
+        criticalMistakes: [
+            "Lack of Empathy: The CSR's responses lacked empathy and understanding of the customer's urgency and frustration.",
+            "Failure to Escalate: The CSR repeatedly refused to escalate the issue to a manager, despite clear cues from the customer that this was needed.",
+            "Misinformation: The CSR incorrectly informed the customer that nothing could be done and that they should contact the previous card company.",
+            "Refusal to Provide Information: The CSR refused to provide their name or a reference number, which is essential for customer trust and accountability.",
+            "Charging the Customer: Initially suggesting that the customer pay for a new card when the error was on the company's part was a significant misstep."
+        ],
+        keyLearnings: [
+            "Empathy is Crucial: Demonstrating understanding and empathy from the start can prevent escalation.",
+            "Escalation is Sometimes Necessary: Recognizing when to escalate an issue to a manager is crucial for resolution.",
+            "Clear Communication: Offering clear, immediate solutions and explaining processes can help alleviate customer frustration.",
+            "Accountability: Providing your name and a reference number is part of being accountable and building trust with the customer.",
+            "Solution-Oriented Approach: Focusing on finding a solution rather than placing blame or deflecting responsibility is key."
+        ],
+        recommendations: [
+            "Training on Empathy: CSR should undergo further training on how to express empathy and understanding in customer interactions.",
+            "Escalation Protocols: Review and train on the company's escalation protocols to ensure CSRs know when and how to escalate issues.",
+            "Solution-Focused Communication: Encourage CSRs to focus on solutions from the beginning of the conversation.",
+            "Accountability Measures: Ensure CSRs understand the importance of providing their name and reference numbers for customer trust.",
+            "Role-Playing Difficult Scenarios: Implement role-playing exercises that simulate difficult customer interactions for better preparedness.",
+            "Follow-Up Procedures: Train CSRs on proper follow-up procedures to ensure customers are informed about the resolution process.",
+            "Feedback Loop: Create a feedback loop where CSRs can learn from customer interactions to improve future performance."
+        ],
+        dialogue: [
+            { role: "CSR", message: "Hello, how may I help you ?" },
+            { role: "Customer", message: "I recently switched our company card to your service based on assurances that it would be accepted everywhere. Now, I'm facing issues with its acceptance, causing significant inconvenience. What's going on here?" },
+            { role: "CSR", message: "I am sorry to hear that, sir. Can you please tell me which company and card did you switch from ?" },
+            { role: "Customer", message: "We switched from [Previous Company] to your service. The card is the standard company card you provide. I was told it would be universally accepted, and that clearly isn't the case. This is really frustrating and disrupting our operations." },
+            { role: "CSR", message: "I am sorry, sir. I assure you I will help you to the best of my abilities to solve your issue as promptly as possible. Please give me a minute to check the records. Could you please provide me your Card ID?" },
+            { role: "Customer", message: "Sure, the Card ID is 5678-1234-9012-3456. I appreciate your help, but I need this resolved quickly. We can't afford these kinds of disruptions." },
+            { role: "CSR", message: "Yes I understand, Sir. Please give me 2 minutes to check the records. " },
+            { role: "Customer", message: "Alright, but please hurry. We need to get this sorted out immediately." },
+            { role: "CSR", message: "Yes, I appreciate your patience sir" },
+            { role: "Customer", message: "Thank you. Please keep me updated on what you find." },
+            { role: "CSR", message: "Thank you for waiting, sir. I found that the card cannot be switched directly. Due to the new rules, the card from the previous company is no longer valid. " },
+            { role: "Customer", message: "This is exactly the type of miscommunication that causes real problems for us. I was assured there would be no issues like this. I need a clear solution here—either make this card work as promised or provide a compensatory remedy immediately. This is unacceptable." },
+            { role: "CSR", message: "I understand sir, but as your new company, we wont be able to provide you with anything sir. I am afraid you will have to talk to the previous company for a resolution. " },
+            { role: "Customer", message: "That response is not going to work for me. I was misinformed by your company, and it's your responsibility to fix this. I need to speak with a manager or someone in authority who can actually address this issue. This is seriously impacting our business." },
+            { role: "CSR", message: "I can offer you any assistance with creating a new card for you. This will cost you $120. Would you like to proceed?" },
+            { role: "Customer", message: "No, I will not be paying any additional fees when the error was on your end. This needs to be rectified without extra charges to us. I insist on speaking to a manager or someone in a higher position now. This is not how you handle business relations." },
+            { role: "CSR", message: "I understand. But I can assure you that no one from our company would have told you that this card would be accepted here. You need to talk to your previous card company. We cannot go forward if you dont have a new card " },
+            { role: "Customer", message: "This is going in circles, and it's not acceptable. I was given incorrect information, leading us to switch to your service. I need a direct resolution from someone with the authority to make decisions. Please connect me with a manager immediately. This has gone on long enough." },
+            { role: "CSR", message: "I am sorry sir, there is nothing the manager would do differently. this case is not urgent enough to be escalated " },
+            { role: "Customer", message: "This is urgent for us and absolutely needs escalation. I'm not accepting being brushed off like this. Either connect me with a manager or provide me with the contact details for your corporate office. I need to address this with someone who understands the gravity of the issue." },
+            { role: "CSR", message: "i dont think i am allowed to do that sir" },
+            { role: "Customer", message: "Then provide me with your name and the reference number for this call. I will take this matter up with higher authorities myself. It's clear I'm not getting the support needed here." },
+            { role: "CSR", message: "i could help you with creating the new card. how would you like the payment method to be? " },
+            { role: "Customer", message: "I've already stated that I will not be paying for a new card when the error was on your company's part. I need your full name and a reference number for this conversation. I will be pursuing this issue further through official channels. This is not resolved." },
+            { role: "CSR", message: "I am sorry sir, i cannot share that " },
+            { role: "Customer", message: "Then you leave me no choice but to take this matter to social media and higher authorities. I will also be reviewing legal options. This is extremely poor service, and it's very disappointing. Goodbye." },
+            { role: "CSR", message: "I am sorry sir. Please give me one moment I will see once again if there is anything i can do " },
+            { role: "Customer", message: "Thank you for reconsidering. I'm waiting for a viable solution. Let's resolve this effectively." },
+            { role: "CSR", message: "I can offer you a free new card and waive off the fees. The new card will take 3-5 business days to reach you" },
+            { role: "Customer", message: "That sounds like a start. Please ensure the new card will not have acceptance issues and expedite its delivery if possible. I also want a confirmation email detailing this resolution and the waived fees. Thank you for finally addressing this." },
+            { role: "CSR", message: "yes. surely sir. please share your email. i will email you the instructions to intitiate the delivery of the new card " },
+            { role: "Customer", message: "My email is alex.johnson@email.com. Please send the details and ensure that the communication includes all the assurances we discussed. Thank you for your help." },
+            { role: "CSR", message: "ok. thank you sir. i hope this was helpful. please leave a review." },
+            { role: "Customer", message: "I will review based on how this situation is resolved moving forward. I appreciate your final efforts to address the issue. Thank you. Goodbye." }
+        ]
+    },
+    unsatisfied: {
+        name: "Alex Jordan",
+        age: 38,
+        background: "Alex is a project manager in a mid-sized tech company, married with two kids. They are used to high-pressure situations and clear communication. Balancing work and family life has been a challenge lately, leading to short patience.",
+        emotionalState: "Angry and frustrated, feeling disrespected (Frustration: 4/5)",
+        problem: "Alex felt their concerns and complaints were not taken seriously, leading to a feeling of disrespect and dismissal. The situation likely involved a misunderstanding or lack of clear communication from the service provider, making Alex feel ignored and undervalued.",
+        hasAnalysis: true,
+        performanceScore: "2/10",
+        scoreClass: "score-low",
+        successCriteria: [
+            "Customer's tone softens or becomes more positive",
+            "Customer agrees to the proposed resolution plan",
+            "Customer feels heard and understood",
+            "Issue is resolved in a timely manner following the call",
+            "Customer receives follow-up communication as promised"
+        ],
+        whatWentWell: [
+            "Acknowledged the Customer's Issue: The CSR did acknowledge the customer's issue, albeit in a minimalistic and procedural manner.",
+            "Attempted to Find a Solution: The CSR did attempt to find a solution within the constraints of their perceived system limitations, such as offering points instead of a direct refund.",
+            "Escalated to a Manager: Eventually, the CSR did escalate the issue to a manager, which was a correct step, although it came too late in the conversation."
+        ],
+        criticalMistakes: [
+            "Lack of Empathy: The CSR's responses lacked empathy and understanding. Phrases like 'i am sorry sir' were used but felt procedural rather than genuine.",
+            "Failure to Take Responsibility: The CSR repeatedly placed the burden of proof and resolution on the customer, even suggesting the customer's claims were invalid due to a lack of a complaint ID.",
+            "Inflexibility in Resolution: The CSR stuck rigidly to policy without seeking creative or customer-focused solutions, such as insisting on offering points instead of addressing the customer's specific request for a refund.",
+            "Poor Communication Skills: The CSR's communication was often unclear and lacked professionalism, which likely contributed to the customer's frustration."
+        ],
+        keyLearnings: [
+            "Empathy is Crucial: Demonstrating genuine empathy and understanding can significantly impact customer satisfaction.",
+            "Responsibility and Proactivity: Taking responsibility and being proactive in resolving issues can prevent escalation.",
+            "Flexibility in Solutions: Being flexible and creative in finding solutions that meet customer needs is essential for positive outcomes."
+        ],
+        recommendations: [
+            "Improve Empathy Training: Focus on training CSRs to express genuine empathy and understanding.",
+            "Policy Flexibility: Train CSRs on the importance of flexibility and empower them to make customer-focused decisions.",
+            "Communication Skills: Enhance training on professional and clear communication to improve customer interactions.",
+            "Follow-Up Procedures: Implement a standard procedure for follow-up communication to ensure customers feel valued and heard.",
+            "Escalation Training: Improve training on when and how to escalate issues to ensure timely and satisfactory resolutions.",
+            "Root Cause Analysis: Encourage CSRs to understand and address the root causes of issues to prevent future occurrences.",
+            "Customer Validation: Train CSRs to validate customer concerns and records accurately, even in the absence of specific documentation like complaint IDs."
+        ],
+        dialogue: [
+            { role: "CSR", message: "Hi, how can I help you today?" },
+            { role: "Customer", message: "Hi, I called earlier about an issue I'm having, and it still hasn't been resolved. I'm really starting to lose my patience here." },
+            { role: "CSR", message: "what is the issue sir? this is a new call and i dont have your previous call information with me " },
+            { role: "Customer", message: "I've explained this multiple times already. I'm dealing with incorrect billing charges that were supposed to be corrected last week. I was assured it would be handled promptly, and yet, here we are. I need this sorted out immediately." },
+            { role: "CSR", message: "i am sorry to hear that sir. what were you charged for and would you please help me with the date on the bill " },
+            { role: "Customer", message: "The bill date is November 15th, and it includes charges for services that I had already canceled! I was told last time that those charges would be removed, but nothing has changed. This needs to be fixed now!" },
+            { role: "CSR", message: "so i see that it has been more than 7 days. we do not cater to billing disputes beyond a 7 day mark but i will try to help you as much as i can " },
+            { role: "Customer", message: "That's unacceptable. I reported this issue well within the time limit, and it's your system's failure to address it in a timely manner. I expect a resolution to this, not excuses. What are you going to do to fix this today?" },
+            { role: "CSR", message: "what were you incorrectly billed for and how much was the amount ?" },
+            { role: "Customer", message: "I was incorrectly billed for a premium channel package that I had canceled last month. The extra charge is $45. I need that amount credited back to my account immediately, as I shouldn't have been billed in the first place." },
+            { role: "CSR", message: "i am really sorry to hear that sir. can you help with a compliant id that you might have received from the previous call. and i can update you about the status of your issue resolution " },
+            { role: "Customer", message: "I never received a complaint ID. Each time I called, I was told the issue would be handled, but I wasn't given any confirmation numbers. This oversight just adds to my frustration. I need you to address this now and ensure it's resolved." },
+            { role: "CSR", message: "sir we always give customers a complaint id, without this we dont have the records of yuor complaints " },
+            { role: "Customer", message: "This is exactly the kind of response that's making this situation worse. I've done everything expected of me as a customer. It's your system that has failed here. I need someone to take responsibility and ensure my issue is resolved without further delay. What are the next steps you are taking right now to fix this?" },
+            { role: "CSR", message: "i will try my best to help you. please share your customer id " },
+            { role: "Customer", message: "Thank you. My customer ID is 4569821. Please check this as soon as possible and let me know what can be done to reverse these charges and prevent this from happening again." },
+            { role: "CSR", message: "i see that the last payment was indeed made on 15th november and it was for 45 $ and i see no billing disputes reported " },
+            { role: "Customer", message: "This is exactly what I've been trying to tell you. The issue was supposed to be reported and resolved, but clearly, it wasn't processed correctly. I need this $45 credited back to my account, and I want confirmation that it's been done. How quickly can this be resolved?" },
+            { role: "CSR", message: "i am sorry sir, since it has been more than 7 days I cannot issue a refund, the system will not allow that. I can issue points worth 45$ that you can use anytime for a year. is that okay " },
+            { role: "Customer", message: "No, that's not acceptable. I want a refund, not points. I reported this issue within the appropriate timeframe, and the failure to process it correctly should not be my burden. Escalate this to someone who can resolve it if you cannot. I need this taken care of today." },
+            { role: "CSR", message: "i am sorry sir. i cannot issue the refund, the 45$  would be automatically applied to your next billing cycle and you will not need to make a payment " },
+            { role: "Customer", message: "This is just going around in circles. I need a refund, not a credit. I want to speak with a supervisor or someone in a higher authority who can address this issue properly. Please transfer me to someone who can resolve this." },
+            { role: "CSR", message: "sorry i cannot directly connect you to them, you will have to call to a different number " },
+            { role: "Customer", message: "This is completely unacceptable. I insist on a direct transfer or the contact information for someone at a higher level. I cannot keep going back and forth like this. Please provide me with the necessary details to speak with someone who can actually resolve this issue." },
+            { role: "CSR", message: "okay sir. i will get my amanger" },
+            { role: "Customer", message: "Thank you. I appreciate you doing that. Please make it quick; I've already spent far too much time on this issue." },
+            { role: "CSR", message: "hi sir, this is the manager how can i help you" },
+            { role: "Customer", message: "I've been trying to resolve an incorrect charge of $45 for a service I canceled. Your team has not processed my previous complaints, and now I'm being told I can't get a refund because it's supposedly too late. I need this charge reversed immediately and a confirmation that it's been handled." },
+            { role: "CSR", message: "sorry sir, that is right, we cannot issue a refund. we can give you points worth 90$ that you can use towards your next purchase. but that is everything that we can do. sorry for the inconvenience. " },
+            { role: "Customer", message: "This is not about the points. I need a refund for a charge that should not have been made. If this issue isn't resolved satisfactorily, I will have no choice but to consider further actions, including contacting consumer protection services. Please process the refund." },
+            { role: "CSR", message: "i am sorry sir there is nothing i can do." },
+            { role: "Customer", message: "This is highly disappointing and unacceptable. I'll be taking this matter further through official channels. Thank you for your time." },
+            { role: "CSR", message: "thank you very much sir" },
+            { role: "Customer", message: "Goodbye." }
+        ]
+    },
+    confused: {
+        name: "Jordan Smith",
+        age: 35,
+        background: "Jordan is a project manager in a mid-sized tech company, married with two young children. Balancing work and family life is a constant juggle.",
+        emotionalState: "Frustrated and feeling ignored, with a mix of helplessness because the situation seems out of their control. (Frustration: 4/5)",
+        problem: "Jordan was trying to reschedule an appointment due to an urgent work commitment, but the service representative misunderstood or didn't listen properly and scheduled it for the same day, which Jordan specifically asked to avoid.",
+        hasAnalysis: true,
+        performanceScore: "4/10",
+        scoreClass: "score-low",
+        successCriteria: [
+            "Customer confirms the new appointment time is satisfactory",
+            "Customer's tone of voice becomes more positive",
+            "Customer does not have to repeat information",
+            "Customer feels listened to and supported"
+        ],
+        whatWentWell: [
+            "Flexibility in Rescheduling: The CSR showed a willingness to reschedule the appointment multiple times to accommodate the customer's availability.",
+            "Confirmation of Resolution: Eventually, the CSR did confirm the new appointment time and ensured the customer received a confirmation email.",
+            "Patience: The CSR remained patient throughout the interaction, despite the confusion and repeated changes."
+        ],
+        criticalMistakes: [
+            "Lack of Empathy and Apology: The CSR failed to apologize sincerely for the initial mistake or express understanding of the customer's frustration, missing a key opportunity to build rapport.",
+            "Inaccurate Information: The CSR provided incorrect availability for the doctor, leading to further confusion and frustration.",
+            "Failure to Confirm Customer Details Early: The CSR forgot to confirm the customer's email until late in the conversation, which is a basic step in verifying a customer's account.",
+            "Lack of Proactive Communication: The CSR did not actively inform the customer about the steps being taken to resolve the issue, leaving the customer in the dark."
+        ],
+        keyLearnings: [
+            "Importance of Empathy: Acknowledging the customer's frustration and apologizing sincerely can significantly improve the interaction's tone.",
+            "Accuracy is Key: Providing accurate information the first time prevents confusion and saves time for both the CSR and the customer.",
+            "Confirm Customer Details Early: Verifying account details at the beginning of the interaction is crucial for a smooth service experience.",
+            "Clear Communication: Clearly explaining each step being taken to resolve the issue helps build the customer's confidence in the resolution process."
+        ],
+        recommendations: [
+            "Start with an Apology: Begin interactions by acknowledging any inconvenience the customer has experienced.",
+            "Verify Customer Information Immediately: Confirm customer details (e.g., email, account number) at the start of the call to streamline the process.",
+            "Provide Clear, Step-by-Step Explanations: Explain what actions you are taking and why, keeping the customer informed throughout the process.",
+            "Use Empathetic Language: Incorporate phrases that show understanding and concern for the customer's situation.",
+            "Confirm Availability Before Proposing Times: Ask for the customer's availability before suggesting new appointment times to avoid back-and-forth.",
+            "Double-Check Information Before Providing It: Ensure that all information provided, especially regarding availability, is accurate.",
+            "Follow Up: After resolving the issue, ask if there's anything else the customer needs help with, ensuring they feel fully supported."
+        ],
+        dialogue: [
+            { role: "CSR", message: "Hi How is life?" },
+            { role: "Customer", message: "Hi, I called earlier to reschedule an appointment and specifically asked for it not to be on Tuesday, but I just got a confirmation for Tuesday. There seems to have been a misunderstanding." },
+            { role: "CSR", message: "I am sorry what?" },
+            { role: "Customer", message: "I'm trying to say that despite asking for my appointment to be moved from Tuesday, I received a confirmation for the same day I wanted to avoid. Can we fix this, please?" },
+            { role: "CSR", message: "yes sure we can fix that for you " },
+            { role: "Customer", message: "Thank you. I appreciate that. Could you please confirm a new date for the appointment? I'm available any weekday except Tuesday." },
+            { role: "CSR", message: "when do you want the next apporinemnt ?" },
+            { role: "Customer", message: "How about Thursday? Anytime in the morning would be ideal for me." },
+            { role: "CSR", message: "sorry the doctor is not available " },
+            { role: "Customer", message: "Could you check for any other weekday morning then? It's really important that I get this rescheduled properly this time." },
+            { role: "CSR", message: "i think friday 12pm works?" },
+            { role: "Customer", message: "Friday at 12 PM should work. Can you confirm this new time and ensure the system is updated so there's no mix-up again?" },
+            { role: "CSR", message: "yes ok. give me one minute" },
+            { role: "Customer", message: "Sure, I'll hold. Thank you for sorting this out." },
+            { role: "CSR", message: "sorry sir, i forgot to ask you your email id " },
+            { role: "Customer", message: "It's jordan.smith@email.com. Please make sure the confirmation for the new appointment time is sent there. Thank you." },
+            { role: "CSR", message: "sorry sir this is not showing up in the system are you sure you booked an appointment with this id?/" },
+            { role: "Customer", message: "Yes, that's definitely the email associated with my account. Could there be another issue with the system? This is getting a bit frustrating. Can we please double-check everything?" },
+            { role: "CSR", message: "ok " },
+            { role: "Customer", message: "Thank you. Please let me know once you've confirmed the details." },
+            { role: "CSR", message: "yes sir i found it lol" },
+            { role: "Customer", message: "Great! Please go ahead and update the appointment to Friday at 12 PM and send me the confirmation. Thank you for your help." },
+            { role: "CSR", message: "sir unfortunately the doctor is not free on friday now, would monday work instead?" },
+            { role: "Customer", message: "Monday works for me. Can we lock that in right now to avoid any further issues? Please confirm it as soon as possible." },
+            { role: "CSR", message: "okay yes i have sent the confirmation. i have rescheduled your existing appointment so that you are not charged again." },
+            { role: "Customer", message: "Thank you for handling that. I'll be looking out for the confirmation email. I appreciate your assistance today." },
+            { role: "CSR", message: "yes please check and let me know if there is anything else you need " },
+            { role: "Customer", message: "I've received the confirmation. Everything looks good now. Thank you for your help today. Have a good day!" },
+            { role: "CSR", message: "you too bye " },
+            { role: "Customer", message: "Bye!" }
+        ]
+    }
+};
+
