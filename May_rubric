@@ -1,126 +1,79 @@
 {
-  "rubric_name": "Customer Service Quality Rubric",
-  "scale_definition": {
-    "1": "Very Poor — fails the criterion, harmful or counterproductive.",
-    "2": "Poor — attempts the criterion but with major issues.",
-    "3": "Adequate — meets the basic expectation with noticeable gaps.",
-    "4": "Good — above average, minor improvements needed.",
-    "5": "Excellent — fully meets or exceeds expectations, highly effective."
-  },
-  "categories": [
-    {
-      "section": "IRP Conflict-Resolution Criteria",
-      "criteria": [
-        {
-          "name": "Interests-Based Reasoning",
-          "definition": "Focuses on mutual goals, customer needs, collaboration, and problem-solving.",
-          "score_anchors": {
-            "1": "Shows no interest in customer needs; pushes generic solutions.",
-            "3": "Acknowledges interests but inconsistently ties them to solutions.",
-            "5": "Fully aligns with customer goals, asks clarifying questions, proposes collaborative solutions."
-          }
-        },
-        {
-          "name": "Rights-Based Reasoning",
-          "definition": "References rules or fairness appropriately, without rigidity or deflection.",
-          "score_anchors": {
-            "1": "Hides behind policies; uses rules to shut down dialogue.",
-            "3": "References policies but lacks empathy or flexibility.",
-            "5": "Uses rules respectfully, balances fairness with customer needs."
-          }
-        },
-        {
-          "name": "Power-Based Reasoning",
-          "definition": "Avoids coercion, threats, or authoritative language.",
-          "score_anchors": {
-            "1": "Uses coercive or threatening tone; asserts power over customer.",
-            "3": "Tone is occasionally controlling or dismissive without being overtly coercive.",
-            "5": "Fully avoids coercion, adopts non-threatening, collaborative language."
-          }
-        }
-      ]
+  "rubric_name": "CSR Conflict-Resolution Quality Rubric (IRP + Communication Skills)",
+  "scoring_scale": "1-5 (1 = poor, 5 = excellent)",
+
+  "dimensions": {
+
+    "interests_based_reasoning": {
+      "description": "Measures how much the CSR uses collaborative, mutual-goal, problem-solving strategies. This is the ONLY positively encouraged IRP behavior.",
+      "interpretation": "Higher score = better.",
+      "anchors": {
+        "1": "No attempt to understand customer needs; no cooperative framing; ignores goals.",
+        "2": "Minimal interests-based reasoning; superficial or inconsistent.",
+        "3": "Some interest-based framing but not sustained or fully aligned with customer needs.",
+        "4": "Mostly focuses on mutual goals, shared problem-solving, and collaboration.",
+        "5": "Strongly and consistently interest-based; frames the situation around mutual benefit and cooperative resolution."
+      }
     },
-    {
-      "section": "Core Communication Competencies",
-      "criteria": [
-        {
-          "name": "Attentiveness",
-          "definition": "Shows active listening using acknowledgments and engaged responses.",
-          "score_anchors": {
-            "1": "Ignores customer statements; no acknowledgment or engagement.",
-            "3": "Acknowledges some points but inconsistently shows active listening.",
-            "5": "Fully attentive; consistently acknowledges details with verbal encouragers."
-          }
-        },
-        {
-          "name": "Perceptiveness",
-          "definition": "Accurately interprets messages and emotions; asks clarifying questions.",
-          "score_anchors": {
-            "1": "Misinterprets or dismisses concerns; no emotional awareness.",
-            "3": "Understands basic facts but misses emotional cues or deeper meaning.",
-            "5": "Fully understands explicit and implicit messages; recognizes emotions; clarifies thoughtfully."
-          }
-        },
-        {
-          "name": "Responsiveness",
-          "definition": "Provides clear, complete, and mutually understood answers.",
-          "score_anchors": {
-            "1": "Answers are irrelevant, incomplete, or unclear.",
-            "3": "Addresses the question but with gaps or vague explanations.",
-            "5": "Fully answers the issue, confirms understanding, and ensures clarity."
-          }
-        }
-      ]
+
+    "rights_based_reasoning": {
+      "description": "Measures how much the CSR relies on rules, policies, fairness claims, or procedural constraints. This behavior is discouraged.",
+      "interpretation": "Higher score = LESS rights-based reasoning (good). Lower score = rule-heavy or rigid (bad).",
+      "anchors": {
+        "1": "Heavy reliance on rules or policy; uses rules to block progress or dismiss customer needs.",
+        "2": "Frequent reference to rules/policies even when unnecessary; rigid tone.",
+        "3": "Moderate use of rules; somewhat neutral but not aligned with interest-based goals.",
+        "4": "Occasional rule mention, softened with empathy or alternatives.",
+        "5": "Avoids rule-based reasoning almost entirely; focuses instead on flexible, interest-based solutions."
+      }
     },
-    {
-      "section": "Additional Criteria",
-      "criteria": [
-        {
-          "name": "Empathy & Emotional Support",
-          "definition": "Validates emotions and maintains warmth.",
-          "score_anchors": {
-            "1": "Cold, dismissive, or invalidating.",
-            "3": "Acknowledges emotion minimally or mechanically.",
-            "5": "Warm, validating, emotionally supportive without overstepping."
-          }
-        },
-        {
-          "name": "Clarity & Readability",
-          "definition": "Message is concise, structured, and easy to understand.",
-          "score_anchors": {
-            "1": "Confusing, poorly structured, hard to follow.",
-            "3": "Understandable but somewhat wordy or unorganized.",
-            "5": "Crystal-clear, logically structured, simple language."
-          }
-        },
-        {
-          "name": "Solution Quality & Usefulness",
-          "definition": "Provides accurate, helpful, actionable next steps.",
-          "score_anchors": {
-            "1": "Incorrect, misleading, or unhelpful solution.",
-            "3": "Partially helpful but missing detail or accuracy.",
-            "5": "Highly effective, accurate, actionable solution tailored to customer."
-          }
-        },
-        {
-          "name": "Professionalism & Politeness",
-          "definition": "Maintains a respectful tone throughout.",
-          "score_anchors": {
-            "1": "Unprofessional, rude, or inappropriate.",
-            "3": "Mostly polite but inconsistently professional.",
-            "5": "Consistently professional, courteous, and respectful."
-          }
-        },
-        {
-          "name": "Efficiency",
-          "definition": "Communicates succinctly without losing information.",
-          "score_anchors": {
-            "1": "Verbose or cluttered; wastes customer time.",
-            "3": "Some unnecessary wording but generally efficient.",
-            "5": "Direct, concise, no wasted text."
-          }
-        }
-      ]
+
+    "power_based_reasoning": {
+      "description": "Measures how much the CSR uses pressure, authority, coercion, or control tactics (heavily discouraged).",
+      "interpretation": "Higher score = LESS power-based reasoning (good). Lower score = controlling/pressuring behavior (bad).",
+      "anchors": {
+        "1": "Uses coercion, pressure, threats, or manipulative tone; highly power-driven.",
+        "2": "Occasional pressuring or dominance; mildly coercive.",
+        "3": "Neutral tone but includes subtle control or pressure.",
+        "4": "Rarely uses power; mostly respectful and non-coercive.",
+        "5": "Completely avoids power moves; fully autonomy-supportive and non-pressuring."
+      }
+    },
+
+    "attentiveness": {
+      "description": "Measures whether the CSR verbally demonstrates active listening and interest (e.g., backchannels, supportive signals).",
+      "interpretation": "Higher score = better cognitive support and customer engagement.",
+      "anchors": {
+        "1": "Shows no listening cues; interrupts or ignores customer statements.",
+        "2": "Inconsistent listening; occasionally acknowledges but often disengaged.",
+        "3": "Acceptable attentiveness; basic acknowledgments present but limited.",
+        "4": "Consistently attentive with meaningful verbal backchannels; clearly engaged.",
+        "5": "Exceptionally attentive; supports customer sharing and maintains strong presence."
+      }
+    },
+
+    "perceptiveness": {
+      "description": "Measures understanding, interpretation, and empathy (rephrasing, emotional acknowledgment, clarifying).",
+      "interpretation": "Higher score = better understanding and emotional alignment.",
+      "anchors": {
+        "1": "No attempt to understand customer meaning or emotion; responds inappropriately.",
+        "2": "Limited perceptiveness; superficial acknowledgment without depth.",
+        "3": "Adequate understanding; occasionally mirrors emotion or clarifies.",
+        "4": "Strong perceptiveness; regularly rephrases, clarifies, and shows emotional insight.",
+        "5": "Highly perceptive; deeply understands customer meaning and emotional state, enabling strong value creation."
+      }
+    },
+
+    "responsiveness": {
+      "description": "Measures whether the CSR demonstrates mutual understanding through clear restatements, validations, and logical follow-through.",
+      "interpretation": "Higher score = better alignment and decision support.",
+      "anchors": {
+        "1": "Responses do not match customer concerns; ignores issues.",
+        "2": "Partially responsive; may address only fragments of the customer's message.",
+        "3": "Generally responsive but not fully aligned; some gaps in understanding.",
+        "4": "Consistently responsive; restates, clarifies, and confirms shared understanding.",
+        "5": "Highly responsive; ensures complete alignment, helps customer make decisions, and verifies mutual understanding."
+      }
     }
-  ]
+  }
 }
