@@ -1,0 +1,143 @@
+{
+  "rubric_name": "CSR Virtual Client Training Rubric",
+  "version": "1.0",
+  "scoring_scale": {
+    "4": "Exemplary",
+    "3": "Proficient",
+    "2": "Developing",
+    "1": "Needs Improvement",
+    "0": "Red Flag"
+  },
+  "criteria": [
+    {
+      "id": "empathy",
+      "name": "Empathy Level",
+      "description": "Ability to acknowledge emotions, validate the customer's experience, and express genuine care.",
+      "anchors": {
+        "4": "Authentic, emotionally attuned statements that validate the customer's worth; tone conveys warm care and understanding.",
+        "3": "Shows clear empathy; uses appropriate phrases with minor stiffness.",
+        "2": "Generic or partially mismatched empathy attempts.",
+        "1": "Minimal or robotic empathy; ignores emotional cues.",
+        "0": "Dismissive, minimizing, or blaming responses."
+      }
+    },
+    {
+      "id": "listening",
+      "name": "Active Listening & Problem Understanding",
+      "description": "Listens fully, restates the problem, and asks clarifying questions.",
+      "anchors": {
+        "4": "Restates issue clearly; uses probing questions; never interrupts.",
+        "3": "Demonstrates understanding with at least one clarifying question.",
+        "2": "Partial listening; misses context or emotional cues.",
+        "1": "Interrupts or moves too quickly into solutions.",
+        "0": "Misunderstands or misrepresents the customer's problem."
+      }
+    },
+    {
+      "id": "positivity",
+      "name": "Positivity & Professional Tone",
+      "description": "Warm, confident, and positive first impression.",
+      "anchors": {
+        "4": "Energetic, friendly, and engaging tone; fully aligned with recommended greeting practices.",
+        "3": "Friendly and polite but lacks warmth or confidence.",
+        "2": "Neutral tone; inconsistent positivity.",
+        "1": "Flat, low-energy, or disinterested.",
+        "0": "Sarcastic, annoyed, or unprofessional."
+      }
+    },
+    {
+      "id": "reassurance",
+      "name": "Reassurance & Confidence-Building",
+      "description": "Provides clear reassurance, instills trust, and reduces uncertainty.",
+      "anchors": {
+        "4": "Strong reassurance with clear next steps; boosts customer confidence.",
+        "3": "Reassures appropriately but lacks specificity.",
+        "2": "Vague or repetitive reassurance.",
+        "1": "Creates uncertainty or weak reassurance.",
+        "0": "Statements that decrease confidence or imply incompetence."
+      }
+    },
+    {
+      "id": "questioning",
+      "name": "Questioning & Information Gathering",
+      "description": "Follows call flow and collects required information systematically.",
+      "anchors": {
+        "4": "Thorough, structured, and aligned with script; all necessary information collected.",
+        "3": "Collects most information in a reasonably structured way.",
+        "2": "Misses key questions or asks them disorganically.",
+        "1": "Disorganized; customer must repeat information.",
+        "0": "Fails to capture essential details."
+      }
+    },
+    {
+      "id": "value_statement",
+      "name": "Solution Delivery & Value Building",
+      "description": "Explains the service process clearly and increases perceived value.",
+      "anchors": {
+        "4": "Clear, accurate value framing; explains technician process, pricing, and benefits.",
+        "3": "Delivers major elements of the value statement.",
+        "2": "Basic explanation but lacks strong value framing.",
+        "1": "Minimal detail; confusing or incomplete.",
+        "0": "Incorrect or misleading explanation."
+      }
+    },
+    {
+      "id": "objection_handling",
+      "name": "Objection & Conflict Handling",
+      "description": "Manages objections, price disputes, scheduling conflicts, and emotional tension.",
+      "anchors": {
+        "4": "Uses structured frameworks (e.g., IRAP); de-escalates effectively.",
+        "3": "Handles objections competently with minor gaps.",
+        "2": "Partially effective but reactive or unfocused.",
+        "1": "Escalates tension or gives rigid responses.",
+        "0": "Argumentative, blaming, or policy weaponizing."
+      }
+    },
+    {
+      "id": "action_asking",
+      "name": "Asking for Action (Booking, Next Steps)",
+      "description": "Encourages customer to move forward and confirms next steps.",
+      "anchors": {
+        "4": "Clear, confident ask (e.g., 'When would you like us to come out?').",
+        "3": "Direct ask but lacks confidence or assertiveness.",
+        "2": "Hesitant or indirect ask.",
+        "1": "Avoids asking for action.",
+        "0": "Does not attempt to schedule or confirm next steps."
+      }
+    },
+    {
+      "id": "structure",
+      "name": "Clarity, Structure, & Script Adherence",
+      "description": "Follows recommended call flow from greeting → listening → care → reassure → ask → value → confirm → gratitude.",
+      "anchors": {
+        "4": "Smooth, coherent flow; aligns closely with script.",
+        "3": "Mostly structured with minor deviations.",
+        "2": "Disorganized or out of sequence.",
+        "1": "Frequently off-script; confusing experience.",
+        "0": "Chaotic or completely unstructured call."
+      }
+    },
+    {
+      "id": "gratitude",
+      "name": "Gratitude & Closing Quality",
+      "description": "Closes the call with professionalism, warmth, and appreciation.",
+      "anchors": {
+        "4": "Sincere and warm gratitude; strong closing message.",
+        "3": "Appropriate gratitude with minor stiffness.",
+        "2": "Transactional closing; no warmth.",
+        "1": "Abrupt or incomplete closing.",
+        "0": "No gratitude or rude ending."
+      }
+    }
+  ],
+  "overall_scoring": {
+    "max_score": 40,
+    "performance_levels": {
+      "36-40": "Outstanding CSR — Ready for advanced scenarios.",
+      "30-35": "Strong CSR — Minor refinement needed.",
+      "20-29": "Developing — Needs structured coaching.",
+      "10-19": "At Risk — Requires targeted retraining.",
+      "0-9": "Fails baseline competency."
+    }
+  }
+}
