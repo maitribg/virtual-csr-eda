@@ -1,0 +1,65 @@
+{
+  "rubric_name": "Unified CSR Performance Rubric (Virtual Client Training + IRP)",
+  "version": "merged-1.0",
+  "scoring_scale": {
+    "4": "Exemplary",
+    "3": "Proficient",
+    "2": "Developing",
+    "1": "Needs Improvement",
+    "0": "Red Flag"
+  },
+  "domains": [
+    {
+      "id": "empathy_emotion",
+      "name": "Empathy, Emotional Alignment & Human Warmth",
+      "dimensions": [
+        {
+          "id": "empathy_level",
+          "name": "Empathy Level",
+          "description": "Ability to acknowledge emotions, validate the customer's experience, and express genuine care and understanding.",
+          "anchors": {
+            "4": "Deep, authentic emotional alignment; accurately mirrors feelings; uses warm, caring language that validates the customer's worth.",
+            "3": "Clearly shows empathy and acknowledges emotions appropriately, with only minor stiffness or formulaic phrasing.",
+            "2": "Attempts empathy in a generic or surface-level way; partially mismatched with the customer's actual emotions.",
+            "1": "Minimal or robotic empathy; largely ignores emotional cues or rushes past them.",
+            "0": "Dismissive, minimizing, blaming, or sarcastic responses toward the customer's emotions or experience."
+          }
+        },
+        {
+          "id": "attentiveness_presence",
+          "name": "Attentiveness & Presence",
+          "description": "Demonstrates active listening and presence through verbal backchannels, pacing, and not interrupting.",
+          "anchors": {
+            "4": "Fully attentive and present; consistent listening cues and backchannels; customer clearly feels heard and encouraged to share.",
+            "3": "Generally attentive with good listening behaviors but occasional minor gaps or missed opportunities.",
+            "2": "Partial listening; misses some context or emotional cues; attention appears inconsistent.",
+            "1": "Interrupts, talks over the customer, or seems distracted; limited signs of active listening.",
+            "0": "Shows no listening cues; consistently ignores or overrides the customer's statements."
+          }
+        }
+      ]
+    },
+    {
+      "id": "understanding_problem",
+      "name": "Understanding the Problem",
+      "dimensions": [
+        {
+          "id": "problem_comprehension",
+          "name": "Problem Comprehension & Clarifying",
+          "description": "Listens fully, restates the problem accurately, and asks clarifying questions to understand context and constraints.",
+          "anchors": {
+            "4": "Restates the issue clearly and accurately; uses relevant clarifying questions to fill gaps; never interrupts.",
+            "3": "Demonstrates solid understanding and asks at least one helpful clarifying question.",
+            "2": "Shows partial understanding; misses important context or details; clarifying questions are limited or off-target.",
+            "1": "Moves too quickly into solutions without fully understanding the problem or clarifying key points.",
+            "0": "Misunderstands, misrepresents, or distorts the customer's problem."
+          }
+        },
+        {
+          "id": "responsiveness_alignment",
+          "name": "Responsiveness & Alignment",
+          "description": "Aligns responses with the customer's stated concerns, verifies mutual understanding, and closes loops.",
+          "anchors": {
+            "4": "Highly responsive and aligned; checks understanding, addresses all key concerns, and confirms shared understanding.",
+            "3": "Generally aligned with the customer's concerns, with only minor gaps or missed follow-ups.",
+            "2": "Responds to fragments of the message; some concerns remain unaddressed or only
