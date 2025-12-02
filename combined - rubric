@@ -62,4 +62,175 @@
           "anchors": {
             "4": "Highly responsive and aligned; checks understanding, addresses all key concerns, and confirms shared understanding.",
             "3": "Generally aligned with the customer's concerns, with only minor gaps or missed follow-ups.",
-            "2": "Responds to fragments of the message; some concerns remain unaddressed or only
+            "2": "Responds to fragments of the message; some concerns remain unaddressed or only partially addressed.",
+            "1": "Frequently off-topic or mismatched; responses do not clearly track the customer's priorities.",
+            "0": "Ignores core concerns or responds in a way that shows no alignment with the customer's issue."
+          }
+        }
+      ]
+    },
+    {
+      "id": "communication_style",
+      "name": "Communication Style & Professionalism",
+      "dimensions": [
+        {
+          "id": "tone_positivity",
+          "name": "Tone, Positivity & Professional Impression",
+          "description": "Projects warmth, confidence, and professionalism, especially in the greeting and ongoing tone.",
+          "anchors": {
+            "4": "Engaging, energetic, friendly, and professional tone that creates an excellent first impression.",
+            "3": "Friendly and polite but may lack some warmth, energy, or confidence.",
+            "2": "Neutral or inconsistent tone; positivity is present but not steady.",
+            "1": "Flat, low-energy, or disinterested tone that weakens rapport.",
+            "0": "Sarcastic, annoyed, hostile, or otherwise unprofessional tone."
+          }
+        },
+        {
+          "id": "structure_flow",
+          "name": "Clarity, Structure & Script Adherence",
+          "description": "Follows recommended call flow (greeting → listening → care → reassure → ask → value → confirm → gratitude) in a way that feels smooth and clear.",
+          "anchors": {
+            "4": "Smooth, coherent flow that closely aligns with recommended script while still sounding natural.",
+            "3": "Mostly structured with minor deviations or rough transitions but overall clear.",
+            "2": "Noticeably disorganized or out of sequence; customer may need to work harder to follow.",
+            "1": "Frequently off-script; structure is confusing or hard to follow.",
+            "0": "Chaotic or unstructured call; no clear flow or adherence to call framework."
+          }
+        }
+      ]
+    },
+    {
+      "id": "solution_value_confidence",
+      "name": "Solution Delivery, Value Communication & Confidence Building",
+      "dimensions": [
+        {
+          "id": "reassurance_trust",
+          "name": "Reassurance & Trust Building",
+          "description": "Reduces uncertainty, reassures the customer, and communicates confidence that the issue will be addressed.",
+          "anchors": {
+            "4": "Provides strong, specific reassurance with clear next steps; noticeably boosts customer confidence.",
+            "3": "Offers appropriate reassurance but with limited specificity or detail.",
+            "2": "Gives vague, repetitive, or generic reassurance with little concrete content.",
+            "1": "Creates or maintains uncertainty; reassurance is weak, confusing, or hedging.",
+            "0": "Statements decrease confidence, imply incompetence, or suggest the issue cannot be resolved."
+          }
+        },
+        {
+          "id": "value_framing",
+          "name": "Value Framing & Solution Explanation",
+          "description": "Explains service process, technician work, pricing, and benefits in a way that increases perceived value for the customer.",
+          "anchors": {
+            "4": "Provides clear, accurate, customer-centered explanation of the process, pricing, and benefits that highlights value.",
+            "3": "Covers the major elements of the value statement with mostly clear explanation.",
+            "2": "Provides a basic explanation but lacks strong value framing or leaves important elements vague.",
+            "1": "Gives minimal detail; explanation is confusing, incomplete, or scattered.",
+            "0": "Provides incorrect, misleading, or contradictory information about the service or value."
+          }
+        }
+      ]
+    },
+    {
+      "id": "conflict_objection_irp",
+      "name": "Conflict & Objection Handling (IRP Framework Integrated)",
+      "dimensions": [
+        {
+          "id": "interest_based_reasoning",
+          "name": "Interest-Based Reasoning (Encouraged)",
+          "description": "Uses collaborative, mutual-goal, problem-solving strategies that focus on underlying needs and shared interests.",
+          "anchors": {
+            "4": "Strong and consistent interest-based framing; focuses on shared goals, mutual benefit, and cooperative problem-solving.",
+            "3": "Uses interest-based reasoning regularly but may not sustain it throughout the interaction.",
+            "2": "Occasionally references mutual goals or shared interests but does so inconsistently.",
+            "1": "Rarely frames the situation in terms of shared interests or collaboration.",
+            "0": "No attempt to understand or address customer needs/interests; no cooperative framing."
+          }
+        },
+        {
+          "id": "rights_based_reasoning",
+          "name": "Rights-Based Reasoning (Discouraged)",
+          "description": "Relies on rules, policies, or fairness claims. Higher scores indicate less problematic rule-heavy behavior.",
+          "anchors": {
+            "4": "Mentions policies or rules only when necessary and always softens with empathy, context, or alternatives.",
+            "3": "Uses rules in a moderate, mostly neutral way without overemphasizing them.",
+            "2": "Frequently references rules or policies; tone can feel rigid or procedural.",
+            "1": "Heavily relies on rules or policy to block progress or dismiss customer needs.",
+            "0": "Weaponizes policy or procedure; uses rules to shut down the conversation or deny help."
+          }
+        },
+        {
+          "id": "power_based_reasoning",
+          "name": "Power-Based Reasoning (Strongly Discouraged)",
+          "description": "Uses pressure, dominance, coercion, or control tactics. Higher scores indicate less power-based behavior.",
+          "anchors": {
+            "4": "Completely avoids power moves; fully autonomy-supportive and non-pressuring.",
+            "3": "Generally respectful with only rare, subtle hints of control or pressure.",
+            "2": "Occasionally uses pressuring or dominance cues, even if not overt.",
+            "1": "Clearly uses power or control behaviors (e.g., ultimatums, pushing decisions).",
+            "0": "Uses threats, coercion, manipulation, or explicit pressure to force outcomes."
+          }
+        },
+        {
+          "id": "objection_handling",
+          "name": "Objection & Conflict Handling Skill",
+          "description": "Manages objections, price disputes, scheduling conflicts, and emotional tension in a structured way.",
+          "anchors": {
+            "4": "Uses a clear framework (e.g., IRAP/LEAR) to explore concerns and de-escalate effectively.",
+            "3": "Handles objections competently with only minor gaps in structure or emotional attunement.",
+            "2": "Partially effective; responses are reactive, unfocused, or miss deeper concerns.",
+            "1": "Responds rigidly or defensively; escalates tension rather than reducing it.",
+            "0": "Argumentative, blaming, or openly combative when handling objections or conflict."
+          }
+        }
+      ]
+    },
+    {
+      "id": "action_closing",
+      "name": "Action, Information Gathering & Closing",
+      "dimensions": [
+        {
+          "id": "questioning_info",
+          "name": "Questioning & Information Capture",
+          "description": "Follows call flow to collect required information systematically without burdening the customer.",
+          "anchors": {
+            "4": "Thorough, structured, and efficient; collects all necessary information in a logical flow.",
+            "3": "Collects most key information in a reasonably organized way.",
+            "2": "Misses some key questions or asks them in a disorganized or confusing order.",
+            "1": "Frequently disorganized; customer must repeat information.",
+            "0": "Fails to capture essential details needed to proceed."
+          }
+        },
+        {
+          "id": "action_asking",
+          "name": "Asking for Action (Next Steps / Booking)",
+          "description": "Encourages the customer to move forward and clearly confirms next steps (e.g., scheduling).",
+          "anchors": {
+            "4": "Uses a clear, confident ask (e.g., \"When would you like us to come out?\") and confirms next steps.",
+            "3": "Provides a direct ask but with some hesitancy or lack of assertiveness.",
+            "2": "Asks for action in a hesitant, indirect, or unclear way.",
+            "1": "Avoids or delays asking for action or commitment.",
+            "0": "Does not attempt to schedule, confirm, or propose any next steps."
+          }
+        },
+        {
+          "id": "closing_gratitude",
+          "name": "Closing & Gratitude",
+          "description": "Closes the interaction with professionalism, warmth, and appreciation for the customer's time and business.",
+          "anchors": {
+            "4": "Sincere, warm gratitude with a strong, professional closing message.",
+            "3": "Appropriate gratitude with minor stiffness or formality.",
+            "2": "Transactional or neutral closing with little warmth.",
+            "1": "Abrupt, incomplete, or awkward closing.",
+            "0": "No gratitude; closing is rude, dismissive, or simply absent."
+          }
+        }
+      ]
+    }
+  ],
+  "overall_guidance": {
+    "notes": [
+      "Use domain-level scores to target coaching (e.g., emotional skills vs. IRP conflict handling vs. structural call skills).",
+      "For rights-based and power-based reasoning, higher scores indicate that the CSR is avoiding problematic behaviors (i.e., less policy weaponizing and coercion).",
+      "You can compute an overall score by summing all dimension scores or by weighting domains depending on training priorities."
+    ]
+  }
+}
