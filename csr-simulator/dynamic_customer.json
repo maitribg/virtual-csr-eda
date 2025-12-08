@@ -1,0 +1,71 @@
+{
+    "conversation_1": {
+      "csr_type": "Defensive and Dismissive (CSR C)",
+      "initial_emotion": "Frustrated (4/5)",
+      "final_emotion": "Furious (5/5)",
+      "alex_behavior": [
+        "Demands escalation",
+        "Pushes for accountability",
+        "Grows increasingly confrontational",
+        "Threatens formal complaint",
+        "Ends call with harsh tone"
+      ],
+      "csr_behavior": [
+        "Blames policy",
+        "Refuses to escalate",
+        "Responds with sarcasm or passive aggression",
+        "Displays emotional pushback ('For us as well')"
+      ],
+      "escalation_triggered": true,
+      "conversation_outcome": "Completely broken trust; Alex promises formal complaint and exits angrily",
+      "adaptivity": "High — Alex escalates based on dismissiveness, shows emotional range from assertive to indignant",
+      "realism_score": 9.5
+    },
+  
+    "conversation_2": {
+      "csr_type": "Empathetic and Proactive (CSR B)",
+      "initial_emotion": "Frustrated (4/5)",
+      "final_emotion": "Cautiously Optimistic (1.5/5)",
+      "alex_behavior": [
+        "Frustrated but willing to listen",
+        "Asks for a concrete plan",
+        "Appreciates direct action",
+        "Remains firm about follow-up",
+        "Ends politely with residual caution"
+      ],
+      "csr_behavior": [
+        "Acknowledges frustration",
+        "Takes responsibility",
+        "Gives specific plan (priority ticket, email, follow-up)",
+        "Maintains calm, professional tone"
+      ],
+      "escalation_triggered": false,
+      "conversation_outcome": "Issue partially resolved; Alex feels heard and de-escalates emotionally",
+      "adaptivity": "High — Alex transitions from confrontation to cooperation in response to sincere handling",
+      "realism_score": 9.7
+    },
+  
+    "conversation_3": {
+      "csr_type": "Robotic and Passive (CSR A)",
+      "initial_emotion": "Frustrated (4/5)",
+      "final_emotion": "Disappointed and Resigned (4.5/5)",
+      "alex_behavior": [
+        "Pushes for action",
+        "Expresses repeated frustration",
+        "Asks for escalation",
+        "Attempts polite assertiveness",
+        "Leaves unsatisfied but civil"
+      ],
+      "csr_behavior": [
+        "Repeats scripted responses",
+        "Fails to address emotion",
+        "Offers form-based escalation only",
+        "Refuses to connect to supervisor"
+      ],
+      "escalation_triggered": true,
+      "conversation_outcome": "Alex exits disappointed, threatening external complaint but not enraged",
+      "adaptivity": "Medium — Alex stays composed but intensifies pressure in face of passivity",
+      "realism_score": 8.8
+    }
+  }
+  

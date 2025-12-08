@@ -7,6 +7,9 @@ data/
 *.csv
 *.json
 
+# EXCEPT: Allow JSON files in csr-simulator
+!csr-simulator/*.json
+
 # Checkpoints
 checkpoint_*.csv
 
